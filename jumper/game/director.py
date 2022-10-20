@@ -1,6 +1,7 @@
 import random
-from tkinter import SEL
+from wsgiref import validate
 from game.puzzle import Puzzle
+from game.parachute import Parachute
 class Director:
     """A person that directs the game play
     
@@ -16,14 +17,15 @@ class Director:
         Arg:
             self (Director):" An instance of director"""
         self._guess = ""
-        self._guesses=[]
-        self._is_guess = True
-        self._play_again="yes"
         self.puzzle = Puzzle()
+        self._parachute = Parachute()
+        self._validate= True
         
 
     def start_game(self):
         for i in range (100):
+            self.validator()
+            self.show_parachute(self._validate)
             self.do_update()
             self.get_user_input()
                
@@ -33,6 +35,12 @@ class Director:
 
     def get_user_input(self):
         self._guess = input("guess a letter [a-z]: ")
+    
+    def show_parachute(self, validator):
+        self._parachute.print_parachute(validator)
+
+    def validator(self):
+        self._validate = self.puzzle._is_correct
 
     
     
