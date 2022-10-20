@@ -23,16 +23,17 @@ class Director:
         
 
     def start_game(self):
-        self.do_update()
         for i in range (100):
-            self.get_user_input()
             self.do_update()
-        
-        
+            self.get_user_input()
+               
+     
+    def do_update(self):
+        self.puzzle.print_puzzle(self._guess)
+
     def get_user_input(self):
         self._guess = input("guess a letter [a-z]: ")
 
-    def do_update(self):
-        self.puzzle.print_puzzle(self._guess)
+    
     
  
