@@ -8,10 +8,12 @@ class Parachute:
     self._parachute=["      _____","     |_____|","    |       |","    |       |","    |       |","     \\     /","      \\   /","       \\ /","        o","      **|**","        |","       * *","      *   *","    ^^^^^^^^^","\n"]
   
   def print_parachute(self, validator):
+    print()
     if validator is True:
       for i in self._parachute:
         print(i)
     else:
+      print()
       self._parachute.pop(0)
       for i in self._parachute:
         print(i)
