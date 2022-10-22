@@ -6,7 +6,7 @@ class Puzzle:
 
     def __init__(self):
         """Construct a list of puzzle words"""
-        self._words = ["jump", "aeroplane", "basket", "pencil","botswana", "nigeria"]
+        self._words = ["jump", "aeroplane", "basket", "pencil","botswana", "nigeria", "apple", "elephant", "tiger"]
         self._word=random.choice(self._words)
         self._guesses = []
     
